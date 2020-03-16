@@ -1,0 +1,23 @@
+<div class="datepicker">
+  <div class="datepicker__wrapper">
+    <div class="datepicker__field">
+      <mat-form-field>
+        <mat-label>Дата с</mat-label>
+        <input [formControl]="dateFromCtrl" matInput [matDatepicker]="fromDate">
+        <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+        <mat-datepicker #fromDate></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="datepicker__field">
+      <mat-form-field>
+        <mat-label>Дата до</mat-label>
+        <input [formControl]="dateToCtrl" matInput [matDatepicker]="toDate">
+        <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+        <mat-datepicker #toDate></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="datepicker__btn">
+    <button mat-raised-button color="primary" (click)="onFetchRates()">Загрузить</button>
+  </div>
+</div>

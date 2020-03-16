@@ -1,0 +1,18 @@
+<div class="exchange-rate-table" *ngIf="exchangeRatePosts.length > 0; else emptyTemplate">
+  <mat-grid-list class="exchange-rate-table__row exchange-rate-table__row--header" cols="4" rowHeight="3:1">
+    <mat-grid-tile class="exchange-rate-table__cell exchange-rate-table__cell--header"></mat-grid-tile>
+    <mat-grid-tile class="exchange-rate-table__cell exchange-rate-table__cell--header"
+                   (click)="sortBySelectedCurrency(currency.code)"
+                   *ngFor="let currency of exchangeRatePosts[0].data">
+      <b>{{ currency.code }}</b>
+      <mat-icon aria-hidden="false" class="exchange-rate-table__filter-ico">sort</mat-icon>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list class="exchange-rate-table__row" cols="4" rowHeight="3:1" *ngFor="let post of exchangeRatePosts">
+    <mat-grid-tile class="exchange-rate-table__cell">{{ post.date }}</mat-grid-tile>
+    <mat-grid-tile class="exchange-rate-table__cell" *ngFor="let currency of post.data">{{ currency.value }}</mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #emptyTemplate>
+  <p>Укажите пожалуйста дату</p>
+</ng-template>

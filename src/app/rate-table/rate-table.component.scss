@@ -1,0 +1,29 @@
+.exchange-rate-table {
+  border: 1px solid #eee;
+}
+
+.exchange-rate-table__cell {
+  border-right: 1px solid #eee;
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.exchange-rate-table__cell--header {
+  background: #dbdee2;
+  cursor: pointer;
+}
+
+.exchange-rate-table__row {
+  border-bottom: 1px solid #eee;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.exchange-rate-table__filter-ico {
+  margin-left: 5px;
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
